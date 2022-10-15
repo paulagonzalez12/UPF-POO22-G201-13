@@ -25,7 +25,7 @@ public class World {
         }
     }
 
-    public simulationStep() {
+    public void simulationStep() {
         for (int i = 0; i < 10; i++){
            if (agents[i].targetReached() == true) {
             agents[i].setTarget(randomPos(), randomPos());
@@ -36,6 +36,8 @@ public class World {
     }
 
     public void paint(Graphics g) {
-
+        for (int i=0; i< numAgents;i++){
+            agents[i].paint(g);
+        }
     }
 }

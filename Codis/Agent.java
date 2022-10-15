@@ -12,25 +12,25 @@ public class Agent {
         radius = r;  
     }
 
-    public setTarget(double tx, double ty) { 
+    public void setTarget(double tx, double ty) { 
         target = new Vec2D(tx, ty);
         dir = new Vec2D(target);
         dir.subtract(pos);
         dir.normalize();
     }
 
-    public setSpeed(double s) { 
+    public void setSpeed(double s) { 
         speed = s; 
     }
 
-    public updatePosition() { 
+    public void updatePosition() { 
         pos.add(new Vec2D(speed*dir.getX(),speed*dir.gety()));
     }
 
     public boolean targetReached() { 
         Vec2D dif = new Vec2D(target);
         dif.subtract(pos);
-        if (dif.length =< radius) {
+        if (dif.length <= radius) {
             return true;
         }
         return false;
@@ -39,7 +39,7 @@ public class Agent {
     public boolean isColliding(Agent a) {
         Vec2D dif = new Vec2D(pos);
         dif.subtract(a.pos);
-        if (dir.length =< radius + a.radius) {
+        if (dir.length <= radius + a.radius) {
             return true;
         }
         return false;

@@ -32,11 +32,10 @@ public class WorldGUI extends JPanel {
 			repaint();
 		}
 	}
-	
+		
 	public void paint(Graphics g) {
 		super.paint(g);
-		
-		// paint the world
+		world.paint(g);
 	}
 
 }
